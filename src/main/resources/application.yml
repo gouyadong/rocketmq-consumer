@@ -1,0 +1,40 @@
+#rocketmq:
+#  #设置RocketMQ服务器地址
+##  name-server: 192.168.137.131:9876
+##  name-server: 10.11.41.204:9876
+#  name-server: 39.97.234.63:9876
+server:
+  port: 9998
+spring:
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 192.168.137.131:9876
+#          name-server: 10.11.41.204:9876
+#          name-server: 39.97.234.63:9876
+      bindings:
+        input:
+          destination: stream-test-topic
+          content-type: text/plain
+          group: stream-binder-group
+        input1:
+          destination: test-output1
+          content-type: text/plain
+          group: stream-binder-group1-output1
+        input2:
+          destination: test-output1
+          content-type: text/plain
+          group: stream-binder-group2-output1
+        input3:
+          destination: test-output2
+          content-type: text/plain
+          group: stream-binder-group3-output2
+        input4:
+          destination: test-output2
+          content-type: text/plain
+          group: stream-binder-group4-output2
+
+
+
+
